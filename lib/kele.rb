@@ -2,6 +2,7 @@ require 'httparty'
 require 'json'
 
 class Kele
+  attr_reader :auth_token
   include HTTParty
 
   base_uri 'https://www.bloc.io/api/v1'
@@ -17,7 +18,6 @@ class Kele
 
   def get_me
     response = self.class.get('/users/me', headers: { authorization: @auth_token })
-    # @mentor_id = response.body['current_enrollment']['mentor_id']
     JSON.parse(response.body)
   end
 
