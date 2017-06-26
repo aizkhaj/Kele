@@ -1,9 +1,11 @@
 require 'httparty'
 require 'json'
+require './lib/roadmap'
 
 class Kele
   attr_reader :auth_token
   include HTTParty
+  include Roadmap
 
   base_uri 'https://www.bloc.io/api/v1'
 
