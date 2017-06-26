@@ -40,7 +40,7 @@ class Kele
       sender: sender,
       recipient_id: recipient_id,
       subject: subject,
-      stripped_text: stripped_text
+      "stripped-text": stripped_text
     }
     body["token"] = token unless token.nil?
     response = self.class.post('/messages', headers: { authorization: @auth_token }, body: body)
